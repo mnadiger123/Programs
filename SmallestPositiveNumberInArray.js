@@ -9,6 +9,7 @@
 //     • each element of array A is an integer within the range [−1,000,000..1,000,000].
 
 
+// Solution 1 : 
 function findSmallestPositiveNumberInArray(values) {
   let result = [];
 
@@ -26,3 +27,17 @@ function findSmallestPositiveNumberInArray(values) {
 
   return 1
 }
+
+
+// Solution 2: Only iterate over the ordered array. 
+// For every value, check if the value is bigger than 0 and if the next element on the array is not equal to the current value + 1.
+var firstMissingPositive = function(A) {
+
+    for(var i=0;i<A.length-1;i++){// iterate until  penultimate element
+        if(A[i]>0 && A[i+1]!=(A[i]+1)){
+            return (A[i]+1);
+        }
+    }
+
+    
+};
